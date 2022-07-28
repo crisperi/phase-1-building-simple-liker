@@ -25,7 +25,7 @@ function toFullHeart() {
 changeHeart(mimicServerCall());
 */
 
-var clicked = document.querySelectorAll(".like-glyph");
+const clicked = document.querySelectorAll(".like-glyph");
 console.log(clicked);
 
 
@@ -33,8 +33,11 @@ console.log(clicked);
 function toFullHeart (){
 for (var i = 0 ; i< clicked.length; i++){
   clicked[i].addEventListener ("click", function(){
-     this.innerHTML = FULL_HEART ;
-      
+     this.innerHTML = FULL_HEART;
+   
+  })
+  clicked[i].addEventListener ("click", function(){
+    this.className = "activated-heart"; 
   })
 
 }
