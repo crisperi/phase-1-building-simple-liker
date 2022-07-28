@@ -51,8 +51,24 @@ for (var i = 0 ; i< clicked.length; i++){
   }
 */
 
+
+
+
 mimicServerCall();
 toFullHeart();
+
+fetch ('http://127.0.0.1:5500/intro-js/mine/phase-1-building-simple-liker/index.html')
+.then (function(response){
+  return response.json();
+
+})
+.then(function(object){
+  console.log(object);
+})
+.catch(function(error){
+ errMessage= document.getElementById("modal");
+ errMessage.removeAttribute("hidden");
+})
 
 
 
