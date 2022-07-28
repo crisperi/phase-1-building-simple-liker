@@ -3,7 +3,53 @@ const EMPTY_HEART = '♡'
 const FULL_HEART = '♥'
 
 // Your JavaScript code goes here!
+/*
+const clicked = document.getElementsByClassName("like-glyph");
 
+function changeHeart(){
+
+  for (var i =0 ; i < clicked.length; i++ ) {
+    clicked[i].addEventListener ("click", toFullHeart , false )
+    console.log(changeHeart)
+
+  }
+ 
+}
+
+function toFullHeart() {
+  for ( var i =0;i<clicked.length; i++){
+    clicked[i] = FULL_HEART ;
+    
+  }
+}
+changeHeart(mimicServerCall());
+*/
+
+var clicked = document.querySelectorAll(".like-glyph");
+console.log(clicked);
+
+
+
+function toFullHeart (){
+for (var i = 0 ; i< clicked.length; i++){
+  clicked[i].addEventListener ("click", function(){
+     this.innerHTML = FULL_HEART ;
+      
+  })
+
+}
+
+}
+
+/*function toFullHeart (){
+  for (var i =0 ; i< clicked.length; i++){
+    clicked[i].onC
+  
+  }
+*/
+
+mimicServerCall();
+toFullHeart();
 
 
 
@@ -23,3 +69,5 @@ function mimicServerCall(url="http://mimicServer.example.com", config={}) {
     }, 300);
   });
 }
+
+
