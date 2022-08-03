@@ -6,7 +6,7 @@ const FULL_HEART = '♥'
 
 
 const clicked = document.querySelectorAll(".like-glyph");
-console.log(clicked);
+
 const fullClickedHeart = document.querySelectorAll(".activated-heart");
 
 
@@ -17,9 +17,10 @@ function getFullHeart() {
 }
 
 
+
 async function toFullHeart() {
 
-
+//this is a different method to complete the same 
   // try{
   //   let k=await mimicServerCall()
   //   console.log(k)
@@ -28,13 +29,26 @@ async function toFullHeart() {
   // }
 
   for (var i = 0; i < clicked.length; i++) {
-    clicked[i].addEventListener("click", function () {
+    clicked[i].addEventListener("click", function (click) {
 
-
+      
       mimicServerCall().then((response) => {
-        console.log(response);
-        this.innerHTML = FULL_HEART;
-        this.className = "activated-heart";
+        
+       // console.log(response);
+        
+      
+        if(this.innerHTML === EMPTY_HEART  ){
+          this.innerHTML = FULL_HEART;
+        this.classList.add('activated-heart')
+        
+       } else{
+        this.innerHTML= EMPTY_HEART;
+        this.classList.remove('activated-heart')
+        this.classList.add('like-glyph')
+       
+      }
+
+      
 
       }).catch(e => {
         console.log(e);
